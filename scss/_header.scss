@@ -1,0 +1,125 @@
+.header {
+  padding: 25px;
+}
+
+@mixin hamburger__line {
+  width: 100%;
+  height: 3px;
+  background-color: $-hamburger-line;
+  position: absolute;
+}
+
+// hamburger btn
+.hamburger {
+  display: inline-block;
+  padding: 15px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  margin: 0;
+}
+
+// box for hamburger line
+.hamburger__box {
+  display: inline-block;
+  width: $-hamburger-width;
+  height: $-hamburger-height;
+  position: relative;
+}
+
+//hamburger inner line
+.hamburger__inner {
+  @include hamburger__line;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.2s 0.1s ease-in-out;
+
+  // hamburger bottom line
+  &::before {
+    @include hamburger__line;
+
+    content: "";
+    left: 0;
+    top: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  //hamburger top line
+  &::after {
+    @include hamburger__line;
+
+    content: "";
+    left: 0;
+    top: -10px;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+// hamburger active style
+.hamburger--active .hamburger__inner {
+  background-color: transparent;
+}
+
+// important - first transform, later rotate
+.hamburger--active .hamburger__inner:before {
+  transform: translateY(-10px) rotate(45deg);
+}
+
+.hamburger--active .hamburger__inner:after {
+  transform: translateY(10px) rotate(-45deg);
+}
+
+.hamburger--active {
+  transform: translateX($-menu-mobile-width);
+}
+
+.navigation {
+  width: 250px;
+  height: 100vh;
+  background-color: $-bg-mobile-nav;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // hide nav with - em
+  transform: translateX(-$-menu-mobile-width);
+}
+
+// navigation active style
+.navigation--active {
+  transform: translateX(0);
+}
+
+.navigation__list {
+  list-style: none;
+  margin-top: 3.5em;
+}
+
+.navigation__item {
+  margin: 1.5em 0;
+
+  // styling links
+
+  a {
+    text-decoration: none;
+    color: $-menu-list-color;
+  }
+  a:visited {
+    color: $-menu-list-color;
+  }
+
+  a:hover {
+    color: $-menu-list-color;
+    opacity: 0.5;
+  }
+
+  a:active {
+    color: $-menu-list-color;
+  }
+}
+
+// all menu transition
+.hamburger,
+.navigation {
+  transition: transform 0.3s 0.1s ease-in-out;
+}
