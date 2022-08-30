@@ -247,4 +247,8 @@ table {
 .navigation {
   transition: transform 0.3s 0.1s ease-in-out;
 }
+
+.wrapper {
+  background: #e4e4e4;
+}
 /*# sourceMappingURL=main.css.map */

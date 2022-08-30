@@ -28,3 +28,33 @@ $-hamburger-height: 1.8em;
 // insta <i class="fa-brands fa-square-instagram"></i>
 // driable <i class="fa-brands fa-square-dribbble"></i>
 // pinte <i class="fa-brands fa-square-pinterest"></i>
+
+// @media
+
+$--mobile-max-width: 40em;
+
+$--tablet-min-width: 40.069em;
+$--tablet-max-width: 64em;
+
+$--desktop-min-width: 64.063em;
+$--desktop-max-width: 90em;
+
+$--screen-xl-min-width: 90.063em;
+
+@mixin tablet {
+  @media screen and ($--tablet-min-width) and ($--tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and ($--desktop-min-width) and ($--desktop-max-width) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @media screen and ($--screen-xl-min-width) {
+    @content;
+  }
+}
