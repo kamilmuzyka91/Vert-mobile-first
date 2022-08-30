@@ -1,5 +1,5 @@
 .header {
-  padding: 1em;
+  padding: 10px;
 
   @include desktop {
     display: flex;
@@ -18,7 +18,7 @@
 // hamburger btn
 .hamburger {
   display: inline-block;
-  padding: 15px;
+  padding: 1em 2em;
   cursor: pointer;
   background: transparent;
   border: 0;
@@ -148,6 +148,8 @@
 .navigation {
   transition: transform 0.3s 0.1s ease-in-out;
 }
+
+// rest menu style for mobile and desktop
 
 .logo {
   display: block;
