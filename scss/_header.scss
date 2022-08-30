@@ -1,5 +1,20 @@
 .header {
   padding: 25px;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex; // or display:none;
+    justify-content: center;
+
+    @include desktop {
+      display: block;
+    }
+  }
 }
 
 @mixin hamburger__line {
@@ -17,6 +32,10 @@
   background: transparent;
   border: 0;
   margin: 0;
+
+  @include desktop {
+    display: none;
+  }
 }
 
 // box for hamburger line
@@ -83,6 +102,13 @@
   left: 0;
   // hide nav with - em
   transform: translateX(-$-menu-mobile-width);
+
+  @include desktop {
+    width: auto;
+    height: auto;
+    transform: translateX(0);
+    position: static;
+  }
 }
 
 // navigation active style
@@ -93,11 +119,19 @@
 .navigation__list {
   list-style: none;
   margin-top: 3.5em;
+
+  @include desktop {
+    display: flex;
+    margin: 0;
+  }
 }
 
 .navigation__item {
   margin: 1.5em 0;
 
+  @include desktop {
+    margin: 0;
+  }
   // styling links
 
   a {
