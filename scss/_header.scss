@@ -1,5 +1,5 @@
 .header {
-  padding: 25px;
+  padding: 1em;
 
   @include desktop {
     display: flex;
@@ -151,13 +151,31 @@
 
 .logo {
   display: block;
-  font: $-logo-font;
-  color: $-white;
   text-align: center;
-  background-color: $-logo-bg-color;
-  border-radius: 6px;
-  max-width: 3em;
+  width: 9em;
   margin: 0 auto;
+  padding: 5px;
+
+  @include desktop {
+    width: 15em;
+  }
+
+  h1 {
+    background-color: $-logo-bg-color;
+    border-radius: 6px;
+    margin: 15px 0;
+
+    a {
+      text-decoration: none;
+      font: $-logo-font;
+      color: $-white;
+    }
+  }
+
+  span {
+    font: $-nav-font;
+    color: $-main-color;
+  }
 
   @include desktop {
     margin: 0;
