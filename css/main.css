@@ -154,16 +154,6 @@ table {
     align-items: center;
   }
 }
-.header .logo {
-  display: flex;
-  justify-content: center;
-  color: red;
-}
-@media screen and (min-width: 64.063em) {
-  .header .logo {
-    display: block;
-  }
-}
 
 .hamburger {
   display: inline-block;
@@ -292,6 +282,23 @@ table {
 .hamburger,
 .navigation {
   transition: transform 0.3s 0.1s ease-in-out;
+}
+
+.logo {
+  display: block;
+  font: normal 400 3.25em "Oleo Script", cursive;
+  color: #fff;
+  text-align: center;
+  background-color: #fc4887;
+  border-radius: 6px;
+  max-width: 3em;
+  margin: 0 auto;
+}
+@media screen and (min-width: 64.063em) {
+  .logo {
+    margin: 0;
+    padding: 0 0.5em;
+  }
 }
 
 .wrapper {
