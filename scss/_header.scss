@@ -10,6 +10,7 @@
   .logo {
     display: flex; // or display:none;
     justify-content: center;
+    color: red;
 
     @include desktop {
       display: block;
