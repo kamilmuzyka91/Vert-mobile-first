@@ -244,6 +244,8 @@ table {
 
 .navigation--active {
   transform: translateX(0);
+  height: 600px;
+  overflow: scroll;
   background-color: #fff;
   box-shadow: 2px 0px 24px -7px #696969;
 }
