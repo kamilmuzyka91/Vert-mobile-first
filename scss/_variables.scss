@@ -3,6 +3,7 @@ $-nav-font: normal 800 1em "Open Sans", sans-serif;
 $-btn-font: bold 800 1.6em "Open Sans", sans-serif;
 $-title-font-bold: bold 800 3.75em "Open Sans", sans-serif;
 $-title-font-normal: normal 800 2.45em "Open Sans", sans-serif;
+$-dropdown-accent: normal 400 0.8em "Open Sans", sans-serif;
 
 $-bg-color: #e4e4e4;
 $-logo-bg-color: #fc4887;
@@ -16,10 +17,9 @@ $-question-circle: "\f059";
 
 // hamburger menu
 $-bg-mobile-nav: #fff;
-// $-menu-list-color: rgb(255, 255, 255);
 $-menu-mobile-width: 16em;
 
-$-hamburger-bg: rgba(0, 0, 0, 0.3);
+$-hamburger-bg: rgba(0, 0, 0, 0.2);
 $-hamburger-line: #ffffff;
 $-hamburger-width: 2.5em;
 $-hamburger-height: 1.8em;
