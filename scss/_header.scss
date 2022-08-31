@@ -1,7 +1,8 @@
 // center content in desktop
 .container {
-  max-width: 63em;
   margin: 0 auto;
+  max-width: 100%;
+  width: 87.5em; // 1400px ?! sprawdź rozmiary @media
 }
 
 .header {
@@ -11,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 4.5em 0 3em 0;
   }
 }
 
@@ -97,15 +99,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 1em;
+
   // hide nav with - em
   transform: translateX(-$-menu-mobile-width);
 
   @include desktop {
-    width: auto;
-    height: auto;
-    transform: translateX(0);
+    display: flex;
+    justify-content: space-between;
     position: static;
+    transform: translateX(0);
+    width: auto;
   }
 }
 
@@ -116,44 +119,35 @@
   overflow: scroll;
   background-color: $-bg-mobile-nav;
   box-shadow: 2px 0px 24px -7px $-main-color;
+
+  @include desktop {
+    overflow: hidden;
+  }
 }
 
-.navigation__list {
-  list-style: none;
+ul {
+  font: $-nav-font;
+  color: #444;
 
   @include desktop {
     display: flex;
-    font: $-nav-font;
-  }
-}
-
-.navigation__item {
-  color: #444;
-  font-weight: 800;
-  padding: 1.5em 0;
-  padding-left: 1.5em;
-  border-top: solid 1px #e8e8e8;
-
-  @include desktop {
-    margin: 0;
-  }
-  // styling links
-
-  a {
-    text-decoration: none;
-    color: $-title-bold-color;
-  }
-  a:visited {
-    color: $-title-bold-color;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  a:hover {
-    color: $-title-bold-color;
-    opacity: 0.5;
-  }
+  li {
+    color: #444;
+    font-weight: 800;
+    border-top: solid 1px #e8e8e8;
+    margin: 0 1em;
 
-  a:active {
-    color: $-title-bold-color;
+    // styling links
+    a {
+      display: block;
+      padding: 2em 0 2em 2em;
+      text-decoration: none;
+      color: $-title-bold-color;
+    }
   }
 }
 
@@ -222,5 +216,23 @@
 
   @include desktop {
     display: none;
+  }
+}
+
+// first menu link
+@include desktop {
+  .current a {
+    color: $-white;
+    background-color: $-title-bold-color;
+    border-radius: 6px;
+    padding: 0.5em;
+  }
+
+  .white-space a:hover {
+    display: inline-block;
+    background-color: $-white;
+    border-radius: 6px;
+    padding: 0.5em;
+    transition: background-color 0.25s ease-in-out;
   }
 }
