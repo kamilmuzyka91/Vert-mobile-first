@@ -83,15 +83,16 @@
 
 .hamburger--active {
   transform: translateX($-menu-mobile-width);
+  margin: 0 2.5em;
 }
 
 .navigation {
   width: 250px;
   height: 100vh;
-  background-color: $-bg-mobile-nav;
   position: absolute;
   top: 0;
   left: 0;
+  padding: 1em;
   // hide nav with - em
   transform: translateX(-$-menu-mobile-width);
 
@@ -106,20 +107,25 @@
 // navigation active style
 .navigation--active {
   transform: translateX(0);
+  background-color: $-bg-mobile-nav;
+  box-shadow: 2px 0px 24px -7px $-main-color;
 }
 
 .navigation__list {
   list-style: none;
-  margin-top: 3.5em;
 
   @include desktop {
     display: flex;
-    margin: 0;
+    font: $-nav-font;
   }
 }
 
 .navigation__item {
-  margin: 1.5em 0;
+  color: #444;
+  font-weight: 800;
+  padding: 1.5em 0;
+  padding-left: 1.5em;
+  border-top: solid 1px #e8e8e8;
 
   @include desktop {
     margin: 0;
@@ -128,19 +134,19 @@
 
   a {
     text-decoration: none;
-    color: $-menu-list-color;
+    color: $-title-bold-color;
   }
   a:visited {
-    color: $-menu-list-color;
+    color: $-title-bold-color;
   }
 
   a:hover {
-    color: $-menu-list-color;
+    color: $-title-bold-color;
     opacity: 0.5;
   }
 
   a:active {
-    color: $-menu-list-color;
+    color: $-title-bold-color;
   }
 }
 
